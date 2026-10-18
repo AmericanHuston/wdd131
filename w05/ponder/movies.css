@@ -69,7 +69,7 @@ footer {
     }
     .movie {
         display: grid;
-        grid-template-columns: 1fr 1ft;
+        grid-template-columns: 1fr 1fr;
         justify-content: center;
     }
     .movie img {

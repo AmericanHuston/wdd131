@@ -12,6 +12,10 @@ footer {
     text-align: center;
 }
 
+footer {
+    margin-top: auto;
+}
+
 hr {
     background-color: rgb(253, 169, 14);
     width: 95dvw;
@@ -47,7 +51,7 @@ hr {
 .book {
     padding: 1rem;
     border-radius: 10px;
-    max-width: 700px;
+    /* max-width: 700px; */
     margin: 20px auto;
 }
 
@@ -71,19 +75,35 @@ hr {
 }
 
 #desc {
-    grid-column: 1/3;
     text-align: left;
+}
+
+#book-break {
+    display: none;
 }
 
 @media (min-width: 600px) {
     .book {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2px 1fr;
+        column-gap: 30px;
         justify-content: center;
     }
 
-    .book img {
-        grid-row: 1/6;
-        grid-column: 1/2;
+    #mobile-only {
+        display: none;
+    }
+
+    #book-break {
+        display: block;
+        background-color: rgb(253, 169, 14);
+    }
+
+    #main-book {
+        grid-column: 3;
+    }
+
+    #meta {
+        padding-right: 20px;
     }
 }

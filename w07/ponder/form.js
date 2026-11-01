@@ -53,6 +53,11 @@ form.addEventListener("submit", function (event) {
     // Validate the input
     // Let the user know to select at least one campus
 
+    if (type === 'many' && selectedCampuses.length < 2) { //Checking this first so its less confusing for the user
+        output.textContent = "Please select at least two campuses";
+        return;
+    }
+
     if (selectedCampuses.length === 0) {
         output.textContent = "Please choose at least one campus";
         return;
@@ -66,11 +71,6 @@ form.addEventListener("submit", function (event) {
     }
 
     //Let the user know if they choose many campus but only had one campus selected that they need to choose at least two campuses
-
-    if (type === 'many' && selectedCampuses.length < 2){
-        output.textContent = "Please select at least two campuses";
-        return;
-    }
 
 
     if (isPastDate(availableDate)) {
